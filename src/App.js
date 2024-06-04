@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import VideoList from './components/VideoList';
+import ShareVideo from './components/ShareVideo';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const handleUserUpdate = (userData) => {
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="app">
+        <Header user={user} onUserUpdate={handleUserUpdate} />
+        <Routes>
+          <Route path="/" element={<VideoList />} />
+          <Route path="/register" element="Register" />
+          <Route path="/login" element="Login" />
+          <Route path="/share" element={<ShareVideo />} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
