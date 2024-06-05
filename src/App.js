@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import VideoList from './components/VideoList';
 import ShareVideo from './components/ShareVideo';
+import Notification from './components/Notification';
 
 const App = () => {
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || {});
   const handleUserUpdate = (userData) => {
     setUser(userData);
     localStorage.setItem('user', JSON.stringify(userData));
@@ -15,6 +16,7 @@ const App = () => {
     <Router>
       <div className="app">
         <Header user={user} onUserUpdate={handleUserUpdate} />
+        <Notification />
         <Routes>
           <Route path="/" element={<VideoList />} />
           <Route path="/register" element="Register" />

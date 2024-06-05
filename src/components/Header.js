@@ -29,7 +29,7 @@ const Header = ({ user, onUserUpdate }) => {
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="/">Funny Movies</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
+      <Navbar.Collapse id="basic-navbar-nav" className='justify-content-end'>
         {user.email ? (
           <>
             <Navbar.Text className="mr-3">Welcome {user.email}</Navbar.Text>
@@ -42,8 +42,7 @@ const Header = ({ user, onUserUpdate }) => {
           </>
         ) : (
           <>
-            <Nav className="mr-auto"></Nav>
-            <Form inline onSubmit={handleSubmit}>
+            <Form inline onSubmit={handleSubmit} className='d-flex align-items-center g-3'>
               <FormControl
                 type="email"
                 placeholder="email"
