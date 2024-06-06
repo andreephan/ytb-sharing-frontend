@@ -8,7 +8,6 @@ const VideoList = () => {
   useEffect(() => {
     const fetchVideos = async () => {
       const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/videos`);
-      console.log(response);
       setVideos(response.data);
     };
     fetchVideos();

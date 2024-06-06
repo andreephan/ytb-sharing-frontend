@@ -44,7 +44,7 @@ const Header = ({ user, onUserUpdate }) => {
           </>
         ) : (
           <>
-            <Form inline onSubmit={handleSubmit} className='d-flex align-items-center g-3'>
+            <Form inline onSubmit={handleSubmit} className='d-flex align-items-center g-3' id='login_form'>
               <FormControl
                 type="email"
                 placeholder="email"

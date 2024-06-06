@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#basic-navbar-nav > button, a, span {
+  margin-right: 10px;
+}
+
+#login_form > input {
+  margin-right: 10px;
+}
+
+.app {
+  padding: 0 1rem;
+}
