@@ -10,7 +10,7 @@ const ShareVideo = ({ user }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3000/api/v1/videos', {
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/videos`, {
         video: { url },
       }, {
         headers: {

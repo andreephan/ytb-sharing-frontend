@@ -1,20 +1,21 @@
 // src/components/Notification.js
 import React, { useState, useEffect } from 'react';
-import CableApp from '../cable';
+import { app } from '../firebase';
+import { getDatabase, ref, onValue, set } from 'firebase/database';
 
 const Notification = () => {
   const [message, setMessage] = useState('');
+  const db = getDatabase(app);
 
   useEffect(() => {
-    const subscription = CableApp.cable.subscriptions.create('NotificationChannel', {
-      received(data) {
+    const notificationRef = ref(db, 'notifications');
+    onValue(notificationRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
         setMessage(data.message);
-      },
+        set(ref(db, 'notifications'), null);
+      }
     });
-
-    return () => {
-      subscription.unsubscribe();
-    };
   }, []);
 
   return (

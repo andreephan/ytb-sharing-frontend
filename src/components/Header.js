@@ -10,7 +10,7 @@ const Header = ({ user, onUserUpdate }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      response = await axios.post('http://localhost:3000/api/v1/sessions', { email, password });
+      response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/v1/sessions`, { email, password });
       if (response.data.user) {
         onUserUpdate({email: response.data.user});
       }
