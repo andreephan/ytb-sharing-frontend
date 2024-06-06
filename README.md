@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# YouTube Video Sharing App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
 
-In the project directory, you can run:
+This application provides a platform for users to share their favorite YouTube videos with others. Whether it's an entertaining clip, a tutorial, or an inspiring talk, users can easily discover and share content that resonates with them.
 
-### `npm start`
+### Main Features:
+- Login/Logout: Users can securely log in and out of the platform. If a user doesn't have an account, they can quickly register to gain access to all features.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- List of Shared Videos: Explore a curated list of videos shared by users. Discover new content across various categories and genres.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Share YouTube Videos: Share YouTube videos directly within the app. Whether it's a captivating story, a thought-provoking documentary, or a helpful tutorial, users can share content they find interesting or valuable.
 
-### `npm test`
+- Real-time Notifications: Stay updated with real-time notifications. Receive alerts when someone shares a video, ensuring you never miss out on the latest content.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Direct Video Playback: Enjoy seamless video playback directly within the app. With integrated YouTube support, users can watch videos without leaving the platform, providing a seamless viewing experience.
 
-### `npm run build`
+## Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v22.2.0)
+- npm (10.7.0)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation & Configuration
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```
+git clone https://github.com/andreephan/ytb-sharing-frontend.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
+```
+cd ytb-sharing-frontend
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Create `.env` file from sample and fill coresponding value:
+```
+cp .env.sample .env
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Install dependencies:
+```
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Start the server:
+```
+npm start
+```
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+after backend and frontend servers were started, go to http://localhost:3001/ to use the app's features.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+![alt text](/public/readme/image.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![alt text](/public/readme/image-1.png)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![alt text](/public/readme/image-2.png)
