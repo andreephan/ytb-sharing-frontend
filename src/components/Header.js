@@ -1,6 +1,7 @@
 import React, { useState }  from 'react';
 import axios from 'axios';
 import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 
 const Header = ({ user, onUserUpdate }) => {
   const [email, setEmail] = useState('');
@@ -15,8 +16,9 @@ const Header = ({ user, onUserUpdate }) => {
         onUserUpdate({email: response.data.user});
       }
       localStorage.setItem('token', response.data.token);
+      toast.success('Logged in successfully');
     } catch (error) {
-      console.error('Error logging in', error);
+      toast.error('Error logging in');
     }
   }
 

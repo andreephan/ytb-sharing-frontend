@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import { redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ShareVideo = ({ user }) => {
   const [url, setUrl] = useState('');
-  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,10 +16,20 @@ const ShareVideo = ({ user }) => {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
       });
-      setMessage('Video shared successfully!');
-      redirect('/');
+      toast.success('Video shared successfully');
     } catch (error) {
-      setMessage('Error sharing video.');
+      if (error.response) {
+        switch (error.response.status) {
+          case 401:
+            toast.error('You need to log in to share a movie');
+            break;
+          case 422:
+            toast.error('Invalid YouTube URL');
+            break;
+          default:
+            toast.error('Something went wrong');
+        }
+      }
     }
   };
 
